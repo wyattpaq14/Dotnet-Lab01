@@ -31,7 +31,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!-- Start of navigation Links !-->
                     <ul class="nav navbar-nav">
-                        <li><a href="Default.aspx">Home</a></li>
+                        <li><a href="../Default.aspx">Home</a></li>
                         <li><a href="../Pages/About.aspx">About</a></li>
                         <li><a href="../Pages/LunchMenu.aspx">Lunch</a></li>
                         <li><a href="../Pages/DinnerMenu.aspx">Dinner</a></li>
