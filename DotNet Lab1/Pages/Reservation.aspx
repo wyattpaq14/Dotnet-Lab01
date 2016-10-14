@@ -14,49 +14,14 @@
             <fieldset>
 
                 <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                    <label for="inputEmail" class="col-lg-2 control-label">Name</label>
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                        <input type="text" class="form-control" id="inputEmail" placeholder="John Doe" />
                     </div>
                 </div>
+                <br />
                 <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                    <div class="col-lg-10">
-                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox">
-                                Checkbox
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-                    <div class="col-lg-10">
-                        <textarea class="form-control" rows="3" id="textArea"></textarea>
-                        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-lg-2 control-label">Radios</label>
-                    <div class="col-lg-10">
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                                Option one is this
-                            </label>
-                        </div>
-                        <div class="radio">
-                            <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                                Option two can be something else
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="select" class="col-lg-2 control-label">Selects</label>
+                    <label for="select" class="col-lg-2 control-label">Head Count</label>
                     <div class="col-lg-10">
                         <select class="form-control" id="select">
                             <option>1</option>
@@ -64,15 +29,43 @@
                             <option>3</option>
                             <option>4</option>
                             <option>5</option>
+                            <option>6+</option>
                         </select>
                         <br>
-                        <select multiple="" class="form-control">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">Time</label>
+                    <div class="col-lg-10">
+                        <select class="form-control" id="select">
+                            <option>1:00 AM</option>
+                            <option>2:00 AM</option>
+                            <option>3:00 AM</option>
+                            <option>4:00 AM</option>
+                            <option>5:00 AM</option>
+                            <option>6:00 AM</option>
+                            <option>7:00 AM</option>
+                            <option>8:00 AM</option>
+                            <option>9:00 AM</option>
+                            <option>10:00 AM</option>
+                            <option>11:00 AM</option>
+                            <option>12:00 AM</option>
+                            <!-- PM Times !-->
+                            <option>1:00 PM</option>
+                            <option>2:00 PM</option>
+                            <option>3:00 PM</option>
+                            <option>4:00 PM</option>
+                            <option>5:00 PM</option>
+                            <option>6:00 PM</option>
+                            <option>7:00 PM</option>
+                            <option>8:00 PM</option>
+                            <option>9:00 PM</option>
+                            <option>10:00 PM</option>
+                            <option>11:00 PM</option>
+                            <option>12:00 PM</option>
                         </select>
+                        <br>
                     </div>
                 </div>
                 <div class="form-group">
