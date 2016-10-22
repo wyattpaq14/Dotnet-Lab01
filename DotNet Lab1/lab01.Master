@@ -15,53 +15,49 @@
 <body>
 
     <div>
-        <!-- Start navagation !-->
+        <%--Start navagation--%>
         <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Zebra Pizzia (Subject to change)</a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <!-- Start of navigation Links !-->
-                    <ul class="nav navbar-nav">
-                        <li><a href="../Default.aspx">Home</a></li>
-                        <li><a href="../Pages/About.aspx">About</a></li>
-                        <li><a href="../Pages/LunchMenu.aspx">Lunch</a></li>
-                        <li><a href="../Pages/DinnerMenu.aspx">Dinner</a></li>
-                        <li><a href="../Pages/Reservations.aspx">Reservations</a></li>
-                        <li><a href="../Pages/Reservation.aspx">Reservation</a></li>
-                        <li><a href="../Pages/Directions.aspx">Directions</a></li>
-                        <li><a href="../Pages/Contact.aspx">Contact</a></li>
-                        <li><a href="../Pages/Users.aspx">Users</a></li>
-                        <li><a href="../Pages/User.aspx">User</a></li>
-                        <li><a href="../Pages/ForgotPassword.aspx">ForgotPassword</a></li>
-                        <li><a href="../Pages/Login.aspx">Login</a></li>
+            <%--decalre form to be used for controls--%>
+            <form id="form1" runat="server">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">Zebra Pizzia (Subject to change)</a>
+                    </div>
 
-                    </ul>
-                    <!-- Search Bar
-                        <form class="navbar-form navbar-left" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Search" />
-                            </div>
-                            <button type="submit" class="btn btn-default">Submit</button>
-                        </form>
-                    !-->
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Logout</a></li>
-                    </ul>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <%--Start of navigation Links--%>
+                        <ul class="nav navbar-nav">
+                            <%--Declare menu bar--%>
+                            <asp:Menu ID="mnuMain" runat="server" Orientation="Horizontal"
+                                RenderingMode="List" IncludeStyleBlock="false"
+                                StaticMenuStyle-CssClass="nav navbar-nav"
+                                DynamicMenuStyle-CssClass="dropdown-menu"
+                                DynamicSelectedStyle-CssClass="active"
+                                StaticSelectedStyle-CssClass="active">
+                            </asp:Menu>
+
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#">Logout</a></li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
+            </form>
         </nav>
-        <!-- Spot for content !-->
+
+        <%--Spot for content--%>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
+
     </div>
 
 </body>
