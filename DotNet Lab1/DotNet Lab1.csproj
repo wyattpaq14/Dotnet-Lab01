@@ -115,12 +115,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin_Pages\MenuItem.aspx" />
+    <Content Include="Admin_Pages\MenuItems.aspx" />
+    <Content Include="Admin_Pages\ResMgmt.aspx" />
+    <Content Include="Admin_Pages\Section.aspx" />
+    <Content Include="Admin_Pages\Sections.aspx" />
+    <Content Include="Admin_Pages\Table.aspx" />
+    <Content Include="Admin_Pages\Tables.aspx" />
+    <Content Include="Content\bootstrap-overide.css" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="scripts\jquery-3.1.1.min.map" />
+    <Content Include="Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -145,8 +154,8 @@
     <Content Include="Pages\LunchMenu.aspx" />
     <Content Include="Pages\Reservation.aspx" />
     <Content Include="Pages\Reservations.aspx" />
-    <Content Include="Pages\User.aspx" />
-    <Content Include="Pages\Users.aspx" />
+    <Content Include="Admin_Pages\User.aspx" />
+    <Content Include="Admin_Pages\Users.aspx" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -168,6 +177,62 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Pages\MenuItem.aspx.cs">
+      <DependentUpon>MenuItem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Pages\MenuItem.aspx.designer.cs">
+      <DependentUpon>MenuItem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Pages\MenuItems.aspx.cs">
+      <DependentUpon>MenuItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Pages\MenuItems.aspx.designer.cs">
+      <DependentUpon>MenuItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Pages\ResMgmt.aspx.cs">
+      <DependentUpon>ResMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Pages\ResMgmt.aspx.designer.cs">
+      <DependentUpon>ResMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Pages\Section.aspx.cs">
+      <DependentUpon>Section.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Pages\Section.aspx.designer.cs">
+      <DependentUpon>Section.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Pages\Sections.aspx.cs">
+      <DependentUpon>Sections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Pages\Sections.aspx.designer.cs">
+      <DependentUpon>Sections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Pages\Table.aspx.cs">
+      <DependentUpon>Table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Pages\Table.aspx.designer.cs">
+      <DependentUpon>Table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Pages\Tables.aspx.cs">
+      <DependentUpon>Tables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Pages\Tables.aspx.designer.cs">
+      <DependentUpon>Tables.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -249,18 +314,18 @@
     <Compile Include="Pages\Reservations.aspx.designer.cs">
       <DependentUpon>Reservations.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\User.aspx.cs">
+    <Compile Include="Admin_Pages\User.aspx.cs">
       <DependentUpon>User.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\User.aspx.designer.cs">
+    <Compile Include="Admin_Pages\User.aspx.designer.cs">
       <DependentUpon>User.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Users.aspx.cs">
+    <Compile Include="Admin_Pages\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Users.aspx.designer.cs">
+    <Compile Include="Admin_Pages\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

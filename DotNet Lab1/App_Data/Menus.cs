@@ -25,11 +25,33 @@ namespace DotNet_Lab1
             lstMenu.Add(new MenuItem("About", "", "", "~/Home/About"));
             lstMenu.Add(new MenuItem("Contact", "", "", "~/Home/Contact"));
             lstMenu.Add(new MenuItem("Sign In", "", "", "~/Home/Sign-In"));
-
+            lstMenu.Add(new MenuItem("Forgot Password", "", "", "~/Home/Forgot-Password"));
 
 
 
             return lstMenu;
+
+            #endregion
+        }
+
+        public static List<MenuItem> getAdminMenuList()
+        {
+
+            #region list declaration
+
+            //Declare list
+            List<MenuItem> lstAdminMenu = new List<MenuItem>();
+            lstAdminMenu.Add(new MenuItem("Menu Item", "", "", "~/Admin/Menu-Item"));
+            lstAdminMenu.Add(new MenuItem("Menu Items", "", "", "~/Admin/Menu-Items"));
+            lstAdminMenu.Add(new MenuItem("Res Mgmt", "", "", "~/Admin/Res-Mgmt"));
+            lstAdminMenu.Add(new MenuItem("Tables", "", "", "~/Admin/Tables"));
+            lstAdminMenu.Add(new MenuItem("Table", "", "", "~/Admin/Table"));
+            lstAdminMenu.Add(new MenuItem("Sections", "", "", "~/Admin/Sections"));
+            lstAdminMenu.Add(new MenuItem("Section", "", "", "~/Admin/Section"));
+            lstAdminMenu.Add(new MenuItem("Users", "", "", "~/Admin/Users"));
+            lstAdminMenu.Add(new MenuItem("User", "", "", "~/Admin/User"));
+
+            return lstAdminMenu;
 
             #endregion
         }

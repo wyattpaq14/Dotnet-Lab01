@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="lab01.master.cs" Inherits="DotNet_Lab1.lab01" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="DotNet_Lab1.Admin" %>
 
 <!DOCTYPE html>
 
@@ -13,7 +13,7 @@
     <script src="Scripts/bootstrap.js" type="text/javascript"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="formNav" runat="server">
         <div>
             <%--Start navagation--%>
             <nav class="navbar navbar-default">
@@ -36,7 +36,7 @@
                         <%--Start of navigation Links--%>
                         <ul class="nav navbar-nav">
                             <%--Declare menu bar--%>
-                            <asp:Menu ID="mnuMain" runat="server" Orientation="Horizontal"
+                            <asp:Menu ID="mnAdminMenu" runat="server" Orientation="Horizontal"
                                 RenderingMode="List" IncludeStyleBlock="false"
                                 StaticMenuStyle-CssClass="nav navbar-nav"
                                 DynamicMenuStyle-CssClass="dropdown-menu"
@@ -53,10 +53,14 @@
                 </div>
 
             </nav>
+            <%--Start form to include content--%>
+            <%--content must be placed inside a form tag with runat=server--%>
+
 
             <%--Spot for content--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
+
 
         </div>
     </form>
