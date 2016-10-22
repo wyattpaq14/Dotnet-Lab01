@@ -24,7 +24,7 @@ namespace DotNet_Lab1
             //Static routes
             routes.MapPageRoute("Home", "Home", "~/Default.aspx");
             routes.MapPageRoute("Lunch-Menu", "Home/Lunch-Menu", "~/Pages/LunchMenu.aspx");
-            routes.MapPageRoute("Dinner-Menu", "Home/Dinner-Menu", "~/Pages/DinnerMenu.aspx");
+            routes.MapPageRoute("Diner-Menu", "Home/Diner-Menu", "~/Pages/DinnerMenu.aspx");
             routes.MapPageRoute("Reservations", "Home/Reservations", "~/Pages/Reservations.aspx");
             routes.MapPageRoute("Directions", "Home/Directions", "~/Pages/Directions.aspx");
             routes.MapPageRoute("About", "Home/About", "~/Pages/About.aspx");
