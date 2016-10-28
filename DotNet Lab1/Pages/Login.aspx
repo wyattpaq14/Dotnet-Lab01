@@ -12,7 +12,7 @@
     </div>
     <br />
     <br />
-
+     
     <%--password validator, textbox and label--%>
     <div class="form-group col-lg-8 col-md-offset-2">
         <asp:Label ID="lblPassword" runat="server" Text="Password" CssClass="col-lg-2 control-label"></asp:Label>
