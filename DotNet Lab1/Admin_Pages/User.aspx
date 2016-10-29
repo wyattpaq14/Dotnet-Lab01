@@ -130,10 +130,8 @@
         <asp:Label ID="lblPhone" runat="server" Text="Phone Number" CssClass="col-lg-2 control-label"></asp:Label>
         <div class="col-lg-10">
             <asp:TextBox ID="txtPhone" runat="server" CssClass="form-control"></asp:TextBox>
-            <label>
-                <input type="checkbox" />
-                Checkbox
-            </label>
+            <asp:Label ID="lblIsActive" runat="server" Text="Is Active"></asp:Label>
+            <asp:CheckBox ID="cbIsActive" runat="server" />
             <asp:RequiredFieldValidator ID="rfvPhone" runat="server" Display="None" ControlToValidate="txtPhone" ErrorMessage="Phone Number is required"></asp:RequiredFieldValidator>
         </div>
     </div>
@@ -141,8 +139,8 @@
     <br />
 
 
-    <asp:Button ID="btnLogin" runat="server" CssClass="col-lg-4 btn btn-default col-md-offset-2" Text="Login" />
-    <asp:Button ID="btnForgotPassword" runat="server" CssClass="col-lg-4 btn btn-default" Text="Forgot Password" />
+    <asp:Button ID="btnUpdate" runat="server" CssClass="col-lg-4 btn btn-default col-md-offset-2" Text="Update" />
+    <asp:Button ID="btnCancel" runat="server" CssClass="col-lg-4 btn btn-default" Text="Cancel" />
     <asp:ValidationSummary ID="vsForm" ShowSummary="true" ShowMessageBox="true" runat="server" />
 
     <br />
