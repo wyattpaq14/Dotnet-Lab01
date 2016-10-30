@@ -130,6 +130,15 @@ namespace DotNet_Lab1.Admin_Pages {
         protected global::System.Web.UI.WebControls.DropDownList ddlMenu;
         
         /// <summary>
+        /// Menu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Menu;
+        
+        /// <summary>
         /// rfvMenu control.
         /// </summary>
         /// <remarks>
@@ -157,6 +166,15 @@ namespace DotNet_Lab1.Admin_Pages {
         protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
         
         /// <summary>
+        /// category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource category;
+        
+        /// <summary>
         /// lblCatIsActive control.
         /// </summary>
         /// <remarks>
@@ -173,15 +191,6 @@ namespace DotNet_Lab1.Admin_Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox cbCatIsActive;
-        
-        /// <summary>
-        /// rfvCbCatIsActive control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCbCatIsActive;
         
         /// <summary>
         /// rfvCategory control.

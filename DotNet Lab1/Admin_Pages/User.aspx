@@ -60,12 +60,15 @@
     <br />
     <br />
 
+
+
     <%--state validator, textbox and label--%>
     <div class="form-group col-lg-8 col-md-offset-2">
         <asp:Label ID="lblState" runat="server" Text="State" CssClass="col-lg-2 control-label"></asp:Label>
         <div class="col-lg-10">
-            <asp:TextBox ID="txtState" runat="server" CssClass="form-control"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="rfvState" runat="server" Display="None" ControlToValidate="txtState" ErrorMessage="State is required"></asp:RequiredFieldValidator>
+            <asp:DropDownList ID="ddlState" runat="server" CssClass="form-control" DataSourceID="state" DataTextField="state_full_name" DataValueField="state_id"></asp:DropDownList>
+            <asp:SqlDataSource ID="state" runat="server" ConnectionString="<%$ ConnectionStrings:SE256_PaquinConnectionString %>" SelectCommand="states_getall" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
+            <asp:RequiredFieldValidator ID="rfvState" runat="server" Display="None" ControlToValidate="ddlState" ErrorMessage="State is required"></asp:RequiredFieldValidator>
         </div>
     </div>
     <br />

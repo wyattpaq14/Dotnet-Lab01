@@ -29,7 +29,8 @@
     <div class="form-group col-lg-8 col-md-offset-2">
         <asp:Label ID="lblSection" runat="server" Text="Section" CssClass="col-lg-2 control-label"></asp:Label>
         <div class="col-lg-10">
-            <asp:DropDownList ID="ddlSection" runat="server" CssClass="form-control"></asp:DropDownList>
+            <asp:DropDownList ID="ddlSection" runat="server" CssClass="form-control" DataSourceID="NEITSQL" DataTextField="sect_desc" DataValueField="sect_id"></asp:DropDownList>
+            <asp:SqlDataSource ID="NEITSQL" runat="server" ConnectionString="<%$ ConnectionStrings:SQL Server %>" SelectCommand="sections_getall" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             <asp:RequiredFieldValidator ID="rfvSection" runat="server" Display="None" ControlToValidate="ddlSection" ErrorMessage="Menu is required"></asp:RequiredFieldValidator>
         </div>
     </div>

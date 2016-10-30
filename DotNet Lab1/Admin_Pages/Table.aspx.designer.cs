@@ -85,6 +85,15 @@ namespace DotNet_Lab1.Admin_Pages {
         protected global::System.Web.UI.WebControls.DropDownList ddlSection;
         
         /// <summary>
+        /// NEITSQL control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource NEITSQL;
+        
+        /// <summary>
         /// rfvSection control.
         /// </summary>
         /// <remarks>

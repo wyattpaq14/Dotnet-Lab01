@@ -47,9 +47,10 @@
 
     <%--menu validator, textbox and label--%>
     <div class="form-group col-lg-8 col-md-offset-2">
-        <asp:Label ID="lblMenu" runat="server" Text="City" CssClass="col-lg-2 control-label"></asp:Label>
+        <asp:Label ID="lblMenu" runat="server" Text="Menu" CssClass="col-lg-2 control-label"></asp:Label>
         <div class="col-lg-10">
-            <asp:DropDownList ID="ddlMenu" runat="server" CssClass="form-control"></asp:DropDownList>
+            <asp:DropDownList ID="ddlMenu" runat="server" CssClass="form-control" DataSourceID="Menu" DataTextField="menu_name" DataValueField="menu_id"></asp:DropDownList>
+            <asp:SqlDataSource ID="Menu" runat="server" ConnectionString="<%$ ConnectionStrings:SE256_PaquinConnectionString %>" SelectCommand="menus_getall" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             <asp:RequiredFieldValidator ID="rfvMenu" runat="server" Display="None" ControlToValidate="ddlMenu" ErrorMessage="Menu is required"></asp:RequiredFieldValidator>
         </div>
     </div>
@@ -58,12 +59,12 @@
 
     <%--category validator, textbox and label--%>
     <div class="form-group col-lg-8 col-md-offset-2">
-        <asp:Label ID="lblCategory" runat="server" Text="State" CssClass="col-lg-2 control-label"></asp:Label>
+        <asp:Label ID="lblCategory" runat="server" Text="Category" CssClass="col-lg-2 control-label"></asp:Label>
         <div class="col-lg-10">
-            <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-control"></asp:DropDownList>
+            <asp:DropDownList ID="ddlCategory" runat="server" CssClass="form-control" DataSourceID="category" DataTextField="cat_name" DataValueField="cat_id"></asp:DropDownList>
+            <asp:SqlDataSource ID="category" runat="server" ConnectionString="<%$ ConnectionStrings:SE256_PaquinConnectionString %>" SelectCommand="menu_categories_getall" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
             <asp:Label ID="lblCatIsActive" runat="server" Text="Is Active"></asp:Label>
             <asp:CheckBox ID="cbCatIsActive" runat="server" />
-            <asp:RequiredFieldValidator ID="rfvCbCatIsActive" runat="server" ControlToValidate="cbCatIsActive" ErrorMessage="Active checkbox is required"></asp:RequiredFieldValidator>
             <asp:RequiredFieldValidator ID="rfvCategory" runat="server" Display="None" ControlToValidate="ddlCategory" ErrorMessage="Category is required"></asp:RequiredFieldValidator>
         </div>
     </div>
