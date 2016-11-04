@@ -4,7 +4,7 @@
 
     <%--name validator, textbox and label--%>
     <div class="form-group col-lg-8 col-md-offset-2">
-        <asp:Label ID="lblName" runat="server" Text="First Name" CssClass="col-lg-2 control-label"></asp:Label>
+        <asp:Label ID="lblName" runat="server" Text="Name" CssClass="col-lg-2 control-label"></asp:Label>
         <div class="col-lg-10">
             <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvName" runat="server" Display="None" ControlToValidate="txtName" ErrorMessage="Name is required"></asp:RequiredFieldValidator>
@@ -40,6 +40,7 @@
         <div class="col-lg-10">
             <asp:TextBox ID="txtPrice" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvPrice" runat="server" Display="None" ControlToValidate="txtPrice" ErrorMessage="Price is required"></asp:RequiredFieldValidator>
+            <asp:RegularExpressionValidator ID="revPrice" runat="server" ErrorMessage="Price is invalid!" display="None" ControlToValidate="txtPrice" ValidationExpression="^\d{0,8}(\.\d{1,4})?$"></asp:RegularExpressionValidator>
         </div>
     </div>
     <br />
@@ -75,7 +76,7 @@
 
 
     <asp:Button ID="btnUpdate" runat="server" CssClass="col-lg-4 btn btn-default col-md-offset-2" Text="Update" />
-    <asp:Button ID="btnCancel" runat="server" CssClass="col-lg-4 btn btn-default" Text="Cancel" />
+    <asp:Button ID="btnCancel" runat="server" CssClass="col-lg-4 btn btn-default" Text="Cancel" CausesValidation="false" PostBackUrl="~/Home"/>
     <asp:ValidationSummary ID="vsForm" ShowSummary="true" ShowMessageBox="true" runat="server" />
 
     <br />
