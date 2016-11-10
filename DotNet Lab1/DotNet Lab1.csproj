@@ -233,6 +233,7 @@
     <Compile Include="Admin_Pages\Tables.aspx.designer.cs">
       <DependentUpon>Tables.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Code\app_user.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,7 +251,7 @@
     <Compile Include="lab01.Master.designer.cs">
       <DependentUpon>lab01.Master</DependentUpon>
     </Compile>
-    <Compile Include="App_Data\Menus.cs" />
+    <Compile Include="App_Code\Menus.cs" />
     <Compile Include="Pages\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
