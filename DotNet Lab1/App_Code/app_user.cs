@@ -11,9 +11,17 @@ namespace DotNet_Lab1.App_Code
 
         #region constructors
 
+        //Default constructor
         public app_user()
         {
             this.Salt = CreateSalt();
+        }
+
+        //Overloaded constructor
+
+        public app_user(string Email)
+        {
+            
         }
 
         #endregion
@@ -56,7 +64,10 @@ namespace DotNet_Lab1.App_Code
 
             return au;
 
+        }
 
+        private static DataTable GetUser(string email)
+        {
 
         }
 
@@ -73,6 +84,8 @@ namespace DotNet_Lab1.App_Code
         public string Salt { get; set; }
 
         public string HashedPwd { get; set; }
+
+        public bool ValidLogin { get; set; }
 
         #endregion
     }
