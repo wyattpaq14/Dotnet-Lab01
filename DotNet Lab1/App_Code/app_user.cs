@@ -1,13 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
+using System.Collections;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
 using System.Security.Cryptography;
+
+
 
 namespace DotNet_Lab1.App_Code
 {
     public class app_user
     {
+
 
         #region constructors
 
@@ -19,7 +25,7 @@ namespace DotNet_Lab1.App_Code
 
         //Overloaded constructor
 
-        public app_user(string Email)
+        public app_user(string email)
         {
             
         }
@@ -54,22 +60,105 @@ namespace DotNet_Lab1.App_Code
             return Convert.ToBase64String(bytHash);
         }
 
+
         public static app_user Login(string email, string freeTxtPwd)
         {
-            app_user au = new app_user();
+            app_user au = new app_user(email);
             au.UserId = 0;
             au.FirstName = "new";
             au.LastName = "password";
             au.HashedPwd = CreatePasswordHash(au.Salt, freeTxtPwd);
+            
 
+            //create sql connection object
+            //gets con string from web.config
+            SqlConnection cn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["SE256_PaquinConnectionString2"].ConnectionString);
+            //create sql command
+            //type as stored procedure
+            //give stored proc name 
+            SqlCommand cmd = new SqlCommand("users_getuser", cn);
+            // Mark the Command as a Stored Procedure
+            cmd.CommandType = CommandType.StoredProcedure;
+            // Add Parameters to Stored Procedure
+            SqlParameter pUserName = new SqlParameter("@user_email", SqlDbType.VarChar, 100);
+            pUserName.Value = email;
+            cmd.Parameters.Add(pUserName);
+
+
+            //instantiate return type
+            DataTable dt = new DataTable();
+
+            // Open the database connection and execute the command
+            try
+            {
+                cn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                //process errors here
+                Console.Write(ex);
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            // Return the dataset
             return au;
+
+
+
 
         }
 
         private static DataTable GetUser(string email)
         {
+            //create sql connection object
+            //gets con string from web.config
+            SqlConnection cn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["SE256_PaquinConnectionString2"].ConnectionString);
+            
+            //create sql command
+            //type as stored procedure
+            //give stored proc name 
+            SqlCommand cmd = new SqlCommand("users_getuser", cn);
+            // Mark the Command as a Stored Procedure
+            cmd.CommandType = CommandType.StoredProcedure;
+            // Add Parameters to Stored Procedure
+            SqlParameter pUserName = new SqlParameter("@user_email", SqlDbType.VarChar, 50);
+            pUserName.Value = email;
+            //cmd.Parameters.Add(pUserName);
 
+
+            //instantiate return type
+            DataTable dt = new DataTable();
+
+            // Open the database connection and execute the command
+            try
+            {
+                cn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+                //process errors here
+                Console.Write(ex);
+                
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+            // Return the dataset
+            return dt;
         }
+
+
 
         #endregion
 
