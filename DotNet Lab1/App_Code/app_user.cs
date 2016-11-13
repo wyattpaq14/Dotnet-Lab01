@@ -107,6 +107,7 @@ namespace DotNet_Lab1.App_Code
             }
 
             // Return the dataset
+            au.ValidLogin = true;
             return au;
 
 
