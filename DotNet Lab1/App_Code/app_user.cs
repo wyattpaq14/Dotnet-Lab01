@@ -27,7 +27,16 @@ namespace DotNet_Lab1.App_Code
 
         public app_user(string email)
         {
-            
+            DataTable dt = GetUser(email);
+            if (dt.Rows.Count > 0)
+            {
+                this.UserId = (int)dt.Rows[0]["user_id"];
+                this.email = dt.Rows[0]["user_email"].ToString();
+                this.Salt = dt.Rows[0]["user_salt"].ToString();
+                this.FirstName = dt.Rows[0]["user_first"].ToString();
+                this.LastName = dt.Rows[0]["user_last"].ToString();
+                this.HashedPwd = dt.Rows[0]["user_pwd"].ToString();
+            }
         }
 
         #endregion
@@ -46,7 +55,7 @@ namespace DotNet_Lab1.App_Code
         }
 
 
-        private static string CreatePasswordHash(string salt, string pwd)
+        public static string CreatePasswordHash(string salt, string pwd)
         {
             string saltAndPwd = string.Concat(salt, pwd);
             // Create a new instance of the hash crypto service provider.
@@ -63,51 +72,13 @@ namespace DotNet_Lab1.App_Code
 
         public static app_user Login(string email, string freeTxtPwd)
         {
-            app_user au = new app_user(email);
+            app_user au = new app_user();
             au.UserId = 0;
             au.FirstName = "new";
             au.LastName = "password";
             au.HashedPwd = CreatePasswordHash(au.Salt, freeTxtPwd);
-            
-
-            //create sql connection object
-            //gets con string from web.config
-            SqlConnection cn = new SqlConnection(
-                ConfigurationManager.ConnectionStrings["SE256_PaquinConnectionString2"].ConnectionString);
-            //create sql command
-            //type as stored procedure
-            //give stored proc name 
-            SqlCommand cmd = new SqlCommand("users_getuser", cn);
-            // Mark the Command as a Stored Procedure
-            cmd.CommandType = CommandType.StoredProcedure;
-            // Add Parameters to Stored Procedure
-            SqlParameter pUserName = new SqlParameter("@user_email", SqlDbType.VarChar, 100);
-            pUserName.Value = email;
-            cmd.Parameters.Add(pUserName);
 
 
-            //instantiate return type
-            DataTable dt = new DataTable();
-
-            // Open the database connection and execute the command
-            try
-            {
-                cn.Open();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-            }
-            catch (Exception ex)
-            {
-                //process errors here
-                Console.Write(ex);
-            }
-            finally
-            {
-                cn.Close();
-            }
-
-            // Return the dataset
-            au.ValidLogin = true;
             return au;
 
 
@@ -117,45 +88,37 @@ namespace DotNet_Lab1.App_Code
 
         private static DataTable GetUser(string email)
         {
-            //create sql connection object
-            //gets con string from web.config
-            SqlConnection cn = new SqlConnection(
-                ConfigurationManager.ConnectionStrings["SE256_PaquinConnectionString2"].ConnectionString);
-            
-            //create sql command
-            //type as stored procedure
-            //give stored proc name 
-            SqlCommand cmd = new SqlCommand("users_getuser", cn);
-            // Mark the Command as a Stored Procedure
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SE256_PaquinConnectionString2"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("users_getByEmail", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            // Add Parameters to Stored Procedure
-            SqlParameter pUserName = new SqlParameter("@user_email", SqlDbType.VarChar, 50);
-            pUserName.Value = email;
-            //cmd.Parameters.Add(pUserName);
+            SqlParameter pEmail = new SqlParameter("@user_email", SqlDbType.VarChar);
+            pEmail.Value = email;
+            cmd.Parameters.Add(pEmail);
 
 
-            //instantiate return type
+            //missing line
+
+
             DataTable dt = new DataTable();
 
-            // Open the database connection and execute the command
+
             try
             {
                 cn.Open();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
             }
-            catch (Exception ex)
+
+            catch
             {
-                //process errors here
-                Console.Write(ex);
-                
+
             }
             finally
             {
                 cn.Close();
             }
 
-            // Return the dataset
+
             return dt;
         }
 
@@ -174,8 +137,9 @@ namespace DotNet_Lab1.App_Code
         public string Salt { get; set; }
 
         public string HashedPwd { get; set; }
+        public string email { get; set; }
 
-        public bool ValidLogin { get; set; }
+        public bool validLogin { get; set; }
 
         #endregion
     }

@@ -4,12 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Security;
+using DotNet_Lab1.App_Code;
 
 
 namespace DotNet_Lab1
 {
     public class Menus
     {
+
         public static List<MenuItem> getMenuList()
         {
 
@@ -24,7 +27,6 @@ namespace DotNet_Lab1
             lstMenu.Add(new MenuItem("Directions", "", "", "~/Home/Directions"));
             lstMenu.Add(new MenuItem("About", "", "", "~/Home/About"));
             lstMenu.Add(new MenuItem("Contact", "", "", "~/Home/Contact"));
-            lstMenu.Add(new MenuItem("Sign In", "", "", "~/Home/Sign-In"));
             lstMenu.Add(new MenuItem("Forgot Password", "", "", "~/Home/Forgot-Password"));
 
 

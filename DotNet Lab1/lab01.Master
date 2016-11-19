@@ -47,12 +47,21 @@
                         </ul>
 
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#">Logout</a></li>
+                            <%-- ASP link for dynamic login/logout shit --%>
+                            <li>
+                                <asp:LinkButton ID="lbLoginState" runat="server" Text="asdf" OnClick="lbLoginState_Click"/></li>
+
                         </ul>
                     </div>
                 </div>
 
             </nav>
+
+            <div class="container">
+                <div>
+                    <h1><asp:Label ID="lblGreeting" runat="server" Text="Greeting" /></h1>
+                </div>
+            </div>
 
             <%--Spot for content--%>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
