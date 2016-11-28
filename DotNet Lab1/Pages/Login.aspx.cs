@@ -8,6 +8,7 @@ using System.Web.Security;
 using DotNet_Lab1.App_Code;
 
 
+
 namespace DotNet_Lab1.Pages
 {
     public partial class Login : System.Web.UI.Page
@@ -20,8 +21,8 @@ namespace DotNet_Lab1.Pages
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             app_user you = new app_user(txtUsername.Text);
-
             string hsh = app_user.CreatePasswordHash(you.Salt, txtPassword.Text);
+            lblPassword.Text = you.HashedPwd;
 
             //check password
             if (hsh == you.HashedPwd)

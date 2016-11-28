@@ -43,7 +43,7 @@ namespace DotNet_Lab1.App_Code
 
         #region methods/functions
 
-        private static string CreateSalt()
+        public static string CreateSalt()
         {
             // Generate a cryptographic random number using the cryptographic 
             // service provider
@@ -88,7 +88,7 @@ namespace DotNet_Lab1.App_Code
 
         private static DataTable GetUser(string email)
         {
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SE256_PaquinConnectionString2"].ConnectionString);
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQL Server"].ConnectionString);
             SqlCommand cmd = new SqlCommand("users_getByEmail", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             SqlParameter pEmail = new SqlParameter("@user_email", SqlDbType.VarChar);
