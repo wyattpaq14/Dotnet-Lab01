@@ -8,20 +8,13 @@
 
         <Columns>
 
-            <asp:TemplateField>
-
-                <ItemTemplate>
-
-                    <asp:HiddenField ID="hdnUsrID" runat="server" Value="12" />
-
-                </ItemTemplate>
-
-            </asp:TemplateField>
+            
 
             <asp:BoundField DataField="item_name" HeaderText="Item Name" />
             <asp:BoundField DataField="item_desc" HeaderText="Item Description" />
             <asp:BoundField DataField="item_allergens" HeaderText="Item Allergens" />
             <asp:BoundField DataField="item_price" HeaderText="Item Price" />
+            <asp:HyperLinkField Text="view/edit" DataNavigateUrlFields="item_id" DataNavigateUrlFormatString="~/Admin/Menu-Item/{0}" />
 
         </Columns>
 
