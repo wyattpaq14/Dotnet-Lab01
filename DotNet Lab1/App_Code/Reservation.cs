@@ -63,7 +63,7 @@ namespace DotNet_Lab1.App_Code
             DataTable dt = new DataTable();
 
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQL Server"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("[res_getById]", cn);
+            SqlCommand cmd = new SqlCommand("res_getById", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@res_id", SqlDbType.Int).Value = tblId;
 

@@ -11,7 +11,7 @@ namespace DotNet_Lab1.Admin_Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+          
         }
     }
 }
