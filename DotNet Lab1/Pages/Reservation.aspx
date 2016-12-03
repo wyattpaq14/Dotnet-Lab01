@@ -5,76 +5,76 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
 
-    <div class="container">
-        <h3 class="col-lg-12">Create Reservation</h3>
-        <br />
-        <br />
-        <br />
-        <form class="form-horizontal">
-            <fieldset>
-
-                <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Name</label>
-                    <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="John Doe" />
-                    </div>
-                </div>
-                <br />
-                <div class="form-group">
-                    <label for="select" class="col-lg-2 control-label">Head Count</label>
-                    <div class="col-lg-10">
-                        <select class="form-control" id="select">
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6+</option>
-                        </select>
-                        <br>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="select" class="col-lg-2 control-label">Time</label>
-                    <div class="col-lg-10">
-                        <select class="form-control" id="select">
-                            <option>1:00 AM</option>
-                            <option>2:00 AM</option>
-                            <option>3:00 AM</option>
-                            <option>4:00 AM</option>
-                            <option>5:00 AM</option>
-                            <option>6:00 AM</option>
-                            <option>7:00 AM</option>
-                            <option>8:00 AM</option>
-                            <option>9:00 AM</option>
-                            <option>10:00 AM</option>
-                            <option>11:00 AM</option>
-                            <option>12:00 AM</option>
-                            <!-- PM Times !-->
-                            <option>1:00 PM</option>
-                            <option>2:00 PM</option>
-                            <option>3:00 PM</option>
-                            <option>4:00 PM</option>
-                            <option>5:00 PM</option>
-                            <option>6:00 PM</option>
-                            <option>7:00 PM</option>
-                            <option>8:00 PM</option>
-                            <option>9:00 PM</option>
-                            <option>10:00 PM</option>
-                            <option>11:00 PM</option>
-                            <option>12:00 PM</option>
-                        </select>
-                        <br>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                        <button type="reset" class="btn btn-default">Cancel</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                </div>
-            </fieldset>
-        </form>
+ <%--reservation ID validator, textbox and label--%>
+    <div class="form-group col-lg-8 col-md-offset-2">
+        <asp:Label ID="lblReservationID" runat="server" Text="Reservation ID" CssClass="col-lg-2 control-label"></asp:Label>
+        <div class="col-lg-10">
+            <asp:TextBox ID="txtReservationID" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvReservationID" runat="server" Display="None" ControlToValidate="txtReservationID" ErrorMessage="Reservation ID is required"></asp:RequiredFieldValidator>
+        </div>
     </div>
+    <br />
+    <br />
+
+    <%--User ID validator, textbox and label--%>
+    <div class="form-group col-lg-8 col-md-offset-2">
+        <asp:Label ID="lblUserID" runat="server" Text="User ID" CssClass="col-lg-2 control-label"></asp:Label>
+        <div class="col-lg-10">
+            <asp:TextBox ID="txtUserID" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvUserID" runat="server" Display="None" ControlToValidate="txtUserID" ErrorMessage="User ID is required"></asp:RequiredFieldValidator>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <%--Reservation Date validator, textbox and label--%>
+    <div class="form-group col-lg-8 col-md-offset-2">
+        <asp:Label ID="lblReservationDate" runat="server" Text="Reservation Date" CssClass="col-lg-2 control-label"></asp:Label>
+        <div class="col-lg-10">
+            <asp:TextBox ID="txtReservationDate" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvReservationDate" runat="server" Display="None" ControlToValidate="txtReservationDate" ErrorMessage="Reservation Date is required"></asp:RequiredFieldValidator>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <%--Reservation Time validator, textbox and label--%>
+    <div class="form-group col-lg-8 col-md-offset-2">
+        <asp:Label ID="lblReservationTime" runat="server" Text="Reservation Time" CssClass="col-lg-2 control-label"></asp:Label>
+        <div class="col-lg-10">
+            <asp:TextBox ID="txtReservationTime" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvReservationTime" runat="server" Display="None" ControlToValidate="txtReservationTime" ErrorMessage="Reservation Time is required"></asp:RequiredFieldValidator>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <%--Guest Count validator, textbox and label--%>
+    <div class="form-group col-lg-8 col-md-offset-2">
+        <asp:Label ID="lblGuestCount" runat="server" Text="Guest Count" CssClass="col-lg-2 control-label"></asp:Label>
+        <div class="col-lg-10">
+            <asp:TextBox ID="txtGuestCount" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvGuestCount" runat="server" Display="None" ControlToValidate="txtGuestCount" ErrorMessage="Guest Count is required"></asp:RequiredFieldValidator>
+        </div>
+    </div>
+    <br />
+    <br />
+
+    <%--Reservation Spec Requirements validator, textbox and label--%>
+    <div class="form-group col-lg-8 col-md-offset-2">
+        <asp:Label ID="lblReservationSpecReq" runat="server" Text="Reservation Spec Requirements" CssClass="col-lg-2 control-label"></asp:Label>
+        <div class="col-lg-10">
+            <asp:TextBox ID="txtReservationSpecReq" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvReservationSpecReq" runat="server" Display="None" ControlToValidate="txtReservationSpecReq" ErrorMessage="User ID is required"></asp:RequiredFieldValidator>
+        </div>
+    </div>
+    <br />
+    <br />
+
+
+
+    <asp:Button ID="btnUpdate" runat="server" CssClass="col-lg-4 btn btn-default col-md-offset-2" Text="Update" />
+    <asp:Button ID="btnCancel" runat="server" CssClass="col-lg-4 btn btn-default" Text="Cancel" CausesValidation="false" PostBackUrl="~/Home" />
+    <asp:ValidationSummary ID="vsForm" ShowSummary="true" ShowMessageBox="true" runat="server" />
+
 </asp:Content>

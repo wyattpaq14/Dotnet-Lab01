@@ -24,12 +24,12 @@ namespace DotNet_Lab1.App_Code
 
             if (dt.Rows.Count > 0)
             {
-                this.tbl_id = (int)dt.Rows[0]["tbl_id"];
-                this.sect_id = (int)dt.Rows[0]["sect_id"];
-                this.tbl_name = dt.Rows[0]["tbl_name"].ToString();
-                this.tbl_desc = dt.Rows[0]["tbl_desc"].ToString();
-                this.tbl_seat_cnt = (int)dt.Rows[0]["tbl_seat_cnt"];
-                this.is_active = (bool)dt.Rows[0]["tbl_active"];
+                this.res_id = (int)dt.Rows[0]["res_id"];
+                this.user_id = (int)dt.Rows[0]["user_id"];
+                this.res_date = (DateTime)dt.Rows[0]["res_date"];
+                this.res_time = (TimeSpan)dt.Rows[0]["res_time"];
+                this.res_guest_cnt = (int)dt.Rows[0]["res_guest_cnt"];
+                this.res_spec_req = dt.Rows[0]["res_spec_req"].ToString();
             }
         }
         #endregion
@@ -37,16 +37,16 @@ namespace DotNet_Lab1.App_Code
 
         #region properties
 
-        public int tbl_id { get; set; }
-        public int sect_id { get; set; }
+        public int res_id { get; set; }
+        public int user_id { get; set; }
 
-        public string tbl_name { get; set; }
+        public DateTime res_date { get; set; }
 
-        public string tbl_desc { get; set; }
+        public TimeSpan res_time { get; set; }
 
-        public int tbl_seat_cnt { get; set; }
+        public int res_guest_cnt { get; set; }
 
-        public bool is_active { get; set; }
+        public string res_spec_req { get; set; }
 
 
 
@@ -63,9 +63,9 @@ namespace DotNet_Lab1.App_Code
             DataTable dt = new DataTable();
 
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQL Server"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("tables_getbyid", cn);
+            SqlCommand cmd = new SqlCommand("[res_getById]", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@tbl_id", SqlDbType.Int).Value = tblId;
+            cmd.Parameters.Add("@res_id", SqlDbType.Int).Value = tblId;
 
             try
             {

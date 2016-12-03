@@ -6,32 +6,26 @@
         <br />
         <br />
         <br />
-        <ul class="list-group col-lg-12">
-            <li class="list-group-item">Reservation 1 
-                <div style="float: right;">9:00AM</div>
-            </li>
-            <li class="list-group-item">Reservation 2
-                <div style="float: right;">10:00AM</div>
-            </li>
-            <li class="list-group-item">Reservation 3
-                <div style="float: right;">11:00AM</div>
-            </li>
-            <li class="list-group-item">Reservation 4
-                <div style="float: right;">12:00AM</div>
-            </li>
-            <li class="list-group-item">Reservation 5
-               <div style="float: right;">1:00PM</div>
-            </li>
-            <li class="list-group-item">Reservation 6
-               <div style="float: right;">2:00PM</div>
-            </li>
-            <li class="list-group-item">Reservation 7
-                <div style="float: right;">3:00PM</div>
-            </li>
-            <li class="list-group-item">Reservation 8
-                <div style="float: right;">4:00PM</div>
-            </li>
-        </ul>
+        <asp:GridView ID="gvReservations" runat="server" AutoGenerateColumns="false" DataSourceID="sdsReservations">
+
+            <Columns>
+
+
+
+                <asp:BoundField DataField="user_id" HeaderText="User ID" />
+                <asp:BoundField DataField="res_date" HeaderText="Reservation Date" />
+                <asp:BoundField DataField="res_time" HeaderText="Reservation Time" />
+                <asp:BoundField DataField="res_guest_cnt" HeaderText="Guest Count" />
+                <asp:BoundField DataField="res_spec_req" HeaderText="Reservation Requirements" />
+                <asp:HyperLinkField Text="view/edit" DataNavigateUrlFields="user_id" DataNavigateUrlFormatString="~/Admin/Res-Mgmt/{0}" />
+
+            </Columns>
+
+        </asp:GridView>
+
+        <asp:SqlDataSource ID="sdsReservations" runat="server"
+            ConnectionString="<%$ ConnectionStrings:SQL Server %>"
+            SelectCommand="res_getAll" SelectCommandType="StoredProcedure"></asp:SqlDataSource>
 
 
     </div>

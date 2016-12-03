@@ -58,10 +58,10 @@ namespace DotNet_Lab1
             routes.MapPageRoute("Section", "Admin/Section/{sect_id}", "~/Admin_Pages/Section.aspx", false, new RouteValueDictionary { { "sect_id", "0" } });
 
             //Res-Mgnt Page
-            routes.MapPageRoute("Res Mgmt", "Admin/Res-Mgmt/{res_id}", "~/Admin_Pages/ResMgmt.aspx", false, new RouteValueDictionary { { "user_id", "0" } });
+            routes.MapPageRoute("Reservation Managment", "Admin/Res-Mgmt/{res_id}", "~/Pages/Reservation.aspx", false, new RouteValueDictionary { { "res_id", "0" } });
 
             //Reservation Page
-            routes.MapPageRoute("Reservation", "Home/Reservation/{user_id}", "~/Pages/Reservation.aspx", false, new RouteValueDictionary { { "res_id", "0" } });
+            routes.MapPageRoute("Reservation", "Home/Reservation/{res_id}", "~/Pages/Reservation.aspx", false, new RouteValueDictionary { { "res_id", "0" } });
 
             //Menuitem Page
             routes.MapPageRoute("Menu Item", "Admin/Menu-Item/{item_id}", "~/Admin_Pages/MenuItem.aspx", false, new RouteValueDictionary { { "item_id", "0" } });
