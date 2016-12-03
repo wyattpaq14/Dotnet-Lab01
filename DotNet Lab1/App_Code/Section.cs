@@ -24,12 +24,10 @@ namespace DotNet_Lab1.App_Code
 
             if (dt.Rows.Count > 0)
             {
-                this.tbl_id = (int)dt.Rows[0]["tbl_id"];
                 this.sect_id = (int)dt.Rows[0]["sect_id"];
-                this.tbl_name = dt.Rows[0]["tbl_name"].ToString();
-                this.tbl_desc = dt.Rows[0]["tbl_desc"].ToString();
-                this.tbl_seat_cnt = (int)dt.Rows[0]["tbl_seat_cnt"];
-                this.is_active = (bool)dt.Rows[0]["tbl_active"];
+                this.sect_name = dt.Rows[0]["sect_name"].ToString();
+                this.sect_desc = dt.Rows[0]["sect_desc"].ToString();
+                this.sect_active = (bool)dt.Rows[0]["sect_active"];
             }
         }
         #endregion
@@ -37,16 +35,13 @@ namespace DotNet_Lab1.App_Code
 
         #region properties
 
-        public int tbl_id { get; set; }
         public int sect_id { get; set; }
 
-        public string tbl_name { get; set; }
+        public string sect_name { get; set; }
 
-        public string tbl_desc { get; set; }
+        public string sect_desc { get; set; }
 
-        public int tbl_seat_cnt { get; set; }
-
-        public bool is_active { get; set; }
+        public bool sect_active { get; set; }
 
 
 
@@ -63,9 +58,9 @@ namespace DotNet_Lab1.App_Code
             DataTable dt = new DataTable();
 
             SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQL Server"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("tables_getbyid", cn);
+            SqlCommand cmd = new SqlCommand("sections_getById", cn);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.Add("@tbl_id", SqlDbType.Int).Value = tblId;
+            cmd.Parameters.Add("@sect_id", SqlDbType.Int).Value = tblId;
 
             try
             {

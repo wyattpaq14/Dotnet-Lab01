@@ -8,19 +8,10 @@
 
         <Columns>
 
-            <asp:TemplateField>
-
-                <ItemTemplate>
-
-                    <asp:HiddenField ID="hdnUsrID" runat="server" Value="12" />
-
-                </ItemTemplate>
-
-            </asp:TemplateField>
-
             <asp:BoundField DataField="sect_name" HeaderText="Section Name" />
             <asp:BoundField DataField="sect_desc" HeaderText="Section Description" />
             <asp:BoundField DataField="sect_active" HeaderText="Is Active" />
+            <asp:HyperLinkField Text="view/edit" DataNavigateUrlFields="sect_id" DataNavigateUrlFormatString="~/Admin/Section/{0}" />
 
         </Columns>
 

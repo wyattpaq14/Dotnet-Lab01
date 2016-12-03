@@ -7,7 +7,7 @@
 
     <%--name validator, textbox and label--%>
     <div class="form-group col-lg-8 col-md-offset-2">
-        <asp:Label ID="lblName" runat="server" Text="First Name" CssClass="col-lg-2 control-label"></asp:Label>
+        <asp:Label ID="lblName" runat="server" Text="Section Name" CssClass="col-lg-2 control-label"></asp:Label>
         <div class="col-lg-10">
             <asp:TextBox ID="txtName" runat="server" CssClass="form-control"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvName" runat="server" Display="None" ControlToValidate="txtName" ErrorMessage="Name is required"></asp:RequiredFieldValidator>

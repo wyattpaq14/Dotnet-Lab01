@@ -11,7 +11,13 @@ namespace DotNet_Lab1.Admin_Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            int tblId = Convert.ToInt32(RouteData.Values["sect_id"]);
 
+            DotNet_Lab1.App_Code.Section sect = new DotNet_Lab1.App_Code.Section(tblId);
+
+            txtName.Text = sect.sect_name.ToString();
+            txtDesc.Text = sect.sect_desc.ToString();
+            cbDescIsActive.Text = sect.sect_active.ToString();
         }
     }
 }
