@@ -235,6 +235,7 @@
       <DependentUpon>Tables.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\app_user.cs" />
+    <Compile Include="App_Code\table.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

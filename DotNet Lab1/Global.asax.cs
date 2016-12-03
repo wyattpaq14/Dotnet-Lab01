@@ -47,6 +47,10 @@ namespace DotNet_Lab1
 
 
 
+            routes.MapPageRoute("Table", "Admin/Tables/{tbl_id}", "~/Admin_Pages/Table.aspx", false, new RouteValueDictionary { { "tbl_id", "0" } });
+
+
+
         }
     }
 }

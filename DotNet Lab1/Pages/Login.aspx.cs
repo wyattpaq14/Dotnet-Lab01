@@ -22,7 +22,6 @@ namespace DotNet_Lab1.Pages
         {
             app_user you = new app_user(txtUsername.Text);
             string hsh = app_user.CreatePasswordHash(you.Salt, txtPassword.Text);
-            lblPassword.Text = you.HashedPwd;
 
             //check password
             if (hsh == you.HashedPwd)

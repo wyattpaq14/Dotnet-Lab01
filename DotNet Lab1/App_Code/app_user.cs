@@ -96,9 +96,6 @@ namespace DotNet_Lab1.App_Code
             cmd.Parameters.Add(pEmail);
 
 
-            //missing line
-
-
             DataTable dt = new DataTable();
 
 

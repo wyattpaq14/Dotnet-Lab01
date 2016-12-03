@@ -12,21 +12,11 @@
 
         <Columns>
 
-            <asp:TemplateField>
-
-                <ItemTemplate>
-
-                    <asp:HiddenField ID="hdnUsrID" runat="server" Value="12" />
-
-                </ItemTemplate>
-
-            </asp:TemplateField>
-
             <asp:BoundField DataField="user_email" HeaderText="Email" />
             <asp:BoundField DataField="user_first" HeaderText="First Name" />
             <asp:BoundField DataField="user_last" HeaderText="Last Name" />
             <asp:BoundField DataField="user_phone" HeaderText="Phone Number" />
-
+            <asp:HyperLinkField Text="view/edit" DataNavigateUrlFields="user_id" DataNavigateUrlFormatString="~/tabels/tabele/{0}" />
         </Columns>
 
     </asp:GridView>
