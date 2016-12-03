@@ -16,7 +16,7 @@
             <asp:BoundField DataField="user_first" HeaderText="First Name" />
             <asp:BoundField DataField="user_last" HeaderText="Last Name" />
             <asp:BoundField DataField="user_phone" HeaderText="Phone Number" />
-            <asp:HyperLinkField Text="view/edit" DataNavigateUrlFields="user_id" DataNavigateUrlFormatString="~/tabels/tabele/{0}" />
+            <asp:HyperLinkField Text="view/edit" DataNavigateUrlFields="user_id" DataNavigateUrlFormatString="~/Admin/User/{0}" />
         </Columns>
 
     </asp:GridView>
