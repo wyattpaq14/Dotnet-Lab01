@@ -39,15 +39,15 @@ namespace DotNet_Lab1
             routes.MapPageRoute("Menu-Items", "Admin/Menu-Items", "~/Admin_Pages/MenuItems.aspx");
             routes.MapPageRoute("Res-Mgmt", "Admin/Res-Mgmt", "~/Admin_Pages/ResMgmt.aspx");
             routes.MapPageRoute("Tables", "Admin/Tables", "~/Admin_Pages/Tables.aspx");
-            routes.MapPageRoute("Table", "Admin/Table", "~/Admin_Pages/Table.aspx");
+            //routes.MapPageRoute("Table", "Admin/Table", "~/Admin_Pages/Table.aspx");
             routes.MapPageRoute("Sections", "Admin/Sections", "~/Admin_Pages/Sections.aspx");
             routes.MapPageRoute("Section", "Admin/Section", "~/Admin_Pages/Section.aspx");
             routes.MapPageRoute("Users", "Admin/Users", "~/Admin_Pages/Users.aspx");
-            routes.MapPageRoute("User", "Admin/User", "~/Admin_Pages/User.aspx");
+            //routes.MapPageRoute("User", "Admin/User", "~/Admin_Pages/User.aspx");
 
 
 
-            routes.MapPageRoute("Table", "Admin/Tables/{tbl_id}", "~/Admin_Pages/Table.aspx", false, new RouteValueDictionary { { "tbl_id", "0" } });
+            routes.MapPageRoute("Table", "Admin/Table/{tbl_id}", "~/Admin_Pages/Table.aspx", false, new RouteValueDictionary { { "tbl_id", "0" } });
 
 
 

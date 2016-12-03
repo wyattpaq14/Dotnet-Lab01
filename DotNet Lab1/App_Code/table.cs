@@ -62,7 +62,7 @@ namespace DotNet_Lab1.App_Code
 
             DataTable dt = new DataTable();
 
-            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SE256_Paquin"].ConnectionString);
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQL Server"].ConnectionString);
             SqlCommand cmd = new SqlCommand("tables_getbyid", cn);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add("@tbl_id", SqlDbType.Int).Value = tblId;

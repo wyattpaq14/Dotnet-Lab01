@@ -17,7 +17,7 @@
                         <asp:BoundField DataField="tbl_desc" HeaderText="Tabel Description" />
                         <asp:BoundField DataField="tbl_seat_cnt" HeaderText="Tabel Seat Count" />
                         <asp:BoundField DataField="tbl_active" HeaderText="Is Active" />
-                        <asp:HyperLinkField Text="view/edit" DataNavigateUrlFields="tbl_id" DataNavigateUrlFormatString="~/tabels/tabele/{0}" />
+                        <asp:HyperLinkField Text="view/edit" DataNavigateUrlFields="tbl_id" DataNavigateUrlFormatString="~/Admin/Table/{0}" />
 
                     </Columns>
 
