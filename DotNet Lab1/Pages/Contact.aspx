@@ -12,8 +12,11 @@
             <div class="col-lg-6 col-lg-offset-3">
                 <h3>Welcome to Zebra Pizzia</h3>
                 <p>
-                   Please fill out the fourm to inform us about company operations.
+                   Please fill out the foum to inform us about company operations. Within the email fields, please put your
+                    email down. In the message feild, please leave us a comment of your choice.
                 </p>
+                <br />
+                <br />
             </div>
         </div>
 

@@ -235,6 +235,7 @@
       <DependentUpon>Tables.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\app_user.cs" />
+    <Compile Include="App_Code\Guest.cs" />
     <Compile Include="App_Code\User.cs" />
     <Compile Include="App_Code\Section.cs" />
     <Compile Include="App_Code\Reservation.cs" />
