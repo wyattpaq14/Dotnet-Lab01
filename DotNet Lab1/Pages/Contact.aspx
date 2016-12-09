@@ -3,9 +3,20 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <h3 class="col-lg-12">Contact Us</h3>
+     
         <br />
         <br />
-        <br /><br /><br /><br />
+        <br />
+
+        <div class="row">
+            <div class="col-lg-6 col-lg-offset-3">
+                <h3>Welcome to Zebra Pizzia</h3>
+                <p>
+                   Please fill out the fourm to inform us about company operations.
+                </p>
+            </div>
+        </div>
+
         <form class="form-horizontal">
             <fieldset>
 
@@ -26,6 +37,7 @@
 
 
                 <div class="form-group">
+
                     <div class="col-lg-10 col-lg-offset-2">
                         <button type="reset" class="btn btn-default">Cancel</button>
                         <button type="submit" class="btn btn-primary">Submit</button>

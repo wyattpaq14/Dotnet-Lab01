@@ -4,7 +4,7 @@
     <div class="container">
 
         <div>
-            <h1>Welcome to Zebra Pizzia (Subject to change)</h1>
+            <h1>Welcome to Zebra Pizzia</h1>
             <p class="lead">We serve pizzia.</p>
         </div>
 
