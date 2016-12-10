@@ -128,11 +128,37 @@ namespace DotNet_Lab1.App_Code
             return dt;
         }
 
-    }
+    
 
-        private static Guest GetGuestByEmail(string email)
+        private static DataTable GetGuestByEmail(string email)
         {
-            return new App_Code.Guest();
+            DataTable dt = new DataTable();
+
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQL Server"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("guest_GetByEmail", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@guest_email", SqlDbType.Int).Value = email;
+
+            try
+            {
+                cn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
+
+            return dt;
+
+
         }
 
 
