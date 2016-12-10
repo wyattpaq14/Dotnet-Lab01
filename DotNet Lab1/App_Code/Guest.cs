@@ -99,11 +99,36 @@ namespace DotNet_Lab1.App_Code
         {
             return true;
         }
-        private static Guest GetGuestById(int id)
+        private static DataTable GetGuestById(int id)
         {
-            return new App_Code.Guest();
+            DataTable dt = new DataTable();
 
+            SqlConnection cn = new SqlConnection(ConfigurationManager.ConnectionStrings["SQL Server"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("guests_getById", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@guest_id", SqlDbType.Int).Value = id;
+
+            try
+            {
+                cn.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
+
+            return dt;
         }
+
+    }
 
         private static Guest GetGuestByEmail(string email)
         {
