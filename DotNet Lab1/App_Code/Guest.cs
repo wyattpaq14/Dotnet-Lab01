@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DotNet_Lab1.App_Code
 {
@@ -23,11 +24,14 @@ namespace DotNet_Lab1.App_Code
 
             if (dt.Rows.Count > 0)
             {
-                this.user_email = dt.Rows[0]["user_email"].ToString();
-                this.user_first = dt.Rows[0]["user_first"].ToString();
-                this.user_last = dt.Rows[0]["user_last"].ToString();
-                this.user_phone = dt.Rows[0]["user_phone"].ToString();
-                this.user_active = (bool)dt.Rows[0]["user_active"];
+                this.guest_id = (int)dt.Rows[0]["guest_id"];
+                this.guest_email = dt.Rows[0]["guest_email"].ToString();
+                this.guest_first = dt.Rows[0]["guest_first"].ToString();
+                this.guest_last = dt.Rows[0]["guest_last"].ToString();
+                this.guest_salt = dt.Rows[0]["guest_salt"].ToString();
+                this.guest_pw = dt.Rows[0]["guest_pw"].ToString();
+                this.guest_phone = dt.Rows[0]["guest_phone"].ToString();
+
             }
         }
 
@@ -37,14 +41,18 @@ namespace DotNet_Lab1.App_Code
         #region properties
 
 
-        public string user_email { get; set; }
-        public string user_first { get; set; }
+        public int guest_id { get; set; }
+        public string guest_email { get; set; }
 
-        public string user_last { get; set; }
+        public string guest_first { get; set; }
 
-        public string user_phone { get; set; }
+        public string guest_last { get; set; }
 
-        public bool user_active { get; set; }
+        public string guest_salt { get; set; }
+
+        public string guest_pw { get; set; }
+
+        public string guest_phone { get; set; }
 
         #endregion
 
@@ -78,6 +86,28 @@ namespace DotNet_Lab1.App_Code
 
 
             return dt;
+        }
+
+
+
+        public static bool InsertGuest()
+        {
+            return true;
+        }
+
+        public static bool UpdateGuest()
+        {
+            return true;
+        }
+        private static Guest GetGuestById(int id)
+        {
+            return new App_Code.Guest();
+
+        }
+
+        private static Guest GetGuestByEmail(string email)
+        {
+            return new App_Code.Guest();
         }
 
 
