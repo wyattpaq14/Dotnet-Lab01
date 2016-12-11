@@ -46,6 +46,11 @@
                 <asp:Label ID="lblAmPm" runat="server" Text="AM/PM: "></asp:Label>
                 <asp:DropDownList ID="ddlAmPm" runat="server"></asp:DropDownList>
             </div>
+            <br />
+            <div>
+                <asp:Label ID="lblNumGuest" runat="server" Text="Guests: "></asp:Label>
+                <asp:DropDownList ID="ddlNumGuest" runat="server"></asp:DropDownList>
+            </div>
         </div>
 
         <%--firstName validator, textbox and label--%>
@@ -101,17 +106,15 @@
                 <asp:RequiredFieldValidator ID="rfvPhone" runat="server" Display="None" ControlToValidate="txtPhone" ErrorMessage="Phone Number is required"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="revPhone" runat="server" ErrorMessage="Phone number is invalid!" Display="None" ControlToValidate="txtPhone" ValidationExpression="^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"></asp:RegularExpressionValidator>
             </div>
+            <br />
+            <br />
+
         </div>
-        <br />
-        <br />
-        <div>
-            <asp:Label ID="lblNumGuest" runat="server" Text="Guests: "></asp:Label>
-            <asp:DropDownList ID="ddlNumGuest" runat="server"></asp:DropDownList>
-        </div>
+
 
         <br />
         <br />
-        <asp:Button ID="btnSubmit" runat="server" CssClass="col-lg-4 btn btn-default col-md-offset-2" OnClick="btnSubmit_Click" Text="Submit" />
+        <asp:Button ID="btnSubmit" runat="server" CssClass="col-lg-4 btn btn-default col-md-offset-2" OnClick="btnSubmit_Click" Text="Create Reservation" />
         <asp:Button ID="btnCancel" runat="server" CssClass="col-lg-4 btn btn-default" Text="Cancel" CausesValidation="false" PostBackUrl="~/Home" />
         <asp:ValidationSummary ID="vsForm" ShowSummary="true" ShowMessageBox="true" runat="server" />
         <br />

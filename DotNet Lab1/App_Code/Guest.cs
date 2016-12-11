@@ -18,18 +18,15 @@ namespace DotNet_Lab1.App_Code
 
         }
 
-        public Guest(int tblId)
+        public Guest(DataTable dt)
         {
-            DataTable dt = getTblById(tblId);
+            
 
             if (dt.Rows.Count > 0)
             {
-                this.guest_id = (int)dt.Rows[0]["guest_id"];
                 this.guest_email = dt.Rows[0]["guest_email"].ToString();
                 this.guest_first = dt.Rows[0]["guest_first"].ToString();
                 this.guest_last = dt.Rows[0]["guest_last"].ToString();
-                this.guest_salt = dt.Rows[0]["guest_salt"].ToString();
-                this.guest_pw = dt.Rows[0]["guest_pw"].ToString();
                 this.guest_phone = dt.Rows[0]["guest_phone"].ToString();
 
             }

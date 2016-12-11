@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
+
 
 namespace DotNet_Lab1.Pages
 {
@@ -52,7 +54,23 @@ namespace DotNet_Lab1.Pages
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            
+            DataTable guest = new DataTable();
+            guest.Columns.Add("guest_email");
+            guest.Columns.Add("guest_first");
+            guest.Columns.Add("guest_last");
+            guest.Columns.Add("guest_phone");
+            DataRow row = guest.NewRow();
+            row["guest_email"] = txtEmail.Text;
+            row["guest_first"] = txtFirstName.Text;
+            row["guest_last"] = txtLastName.Text;
+            row["guest_phone"] = txtPhone.Text;
+
+
+
+            guest.Rows.Add(row);
+
+
+            App_Code.Guest gst = new App_Code.Guest(guest);
         }
     }
 }

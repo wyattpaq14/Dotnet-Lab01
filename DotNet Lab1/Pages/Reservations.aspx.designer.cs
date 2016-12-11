@@ -94,6 +94,24 @@ namespace DotNet_Lab1.Pages {
         protected global::System.Web.UI.WebControls.DropDownList ddlAmPm;
         
         /// <summary>
+        /// lblNumGuest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblNumGuest;
+        
+        /// <summary>
+        /// ddlNumGuest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlNumGuest;
+        
+        /// <summary>
         /// lblFirstName control.
         /// </summary>
         /// <remarks>
@@ -254,24 +272,6 @@ namespace DotNet_Lab1.Pages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revPhone;
-        
-        /// <summary>
-        /// lblNumGuest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNumGuest;
-        
-        /// <summary>
-        /// ddlNumGuest control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlNumGuest;
         
         /// <summary>
         /// btnSubmit control.
