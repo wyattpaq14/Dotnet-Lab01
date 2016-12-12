@@ -54,23 +54,27 @@ namespace DotNet_Lab1.Pages
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            DataTable guest = new DataTable();
-            guest.Columns.Add("guest_email");
-            guest.Columns.Add("guest_first");
-            guest.Columns.Add("guest_last");
-            guest.Columns.Add("guest_phone");
-            DataRow row = guest.NewRow();
-            row["guest_email"] = txtEmail.Text;
-            row["guest_first"] = txtFirstName.Text;
-            row["guest_last"] = txtLastName.Text;
-            row["guest_phone"] = txtPhone.Text;
+            //Declare new guest object
+            App_Code.Guest gst = new App_Code.Guest();
+
+            gst.guest_email = txtEmail.Text;
+            gst.guest_first = txtFirstName.Text;
+            gst.guest_last = txtLastName.Text;
+            gst.guest_phone = txtPhone.Text;
 
 
 
-            guest.Rows.Add(row);
+            //save new reservation in a data table
+            App_Code.Reservation res = new App_Code.Reservation();
 
+            TimeSpan reservationTime = new TimeSpan();
 
-            App_Code.Guest gst = new App_Code.Guest(guest);
+            res.guest_email = txtEmail.Text;
+            res.res_date = Calendar1.SelectedDate;
+            res.res_time = reservationTime; //do some shit with timespan to merge hours and mins 
+            res.res_guest_cnt = Convert.ToInt32(ddlNumGuest.SelectedValue);
+
+            
         }
     }
 }

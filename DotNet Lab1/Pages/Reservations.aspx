@@ -30,7 +30,7 @@
 
 
         <div class="row">
-            <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+            <asp:Calendar ID="Calendar1" runat="server" SelectionMode="Day"></asp:Calendar>
             <br />
             <div>
                 <asp:Label ID="lblHour" runat="server" Text="Hour: "></asp:Label>

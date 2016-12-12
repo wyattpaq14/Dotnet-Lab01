@@ -18,6 +18,21 @@ namespace DotNet_Lab1.App_Code
 
         }
 
+        public Reservation(DataTable dt)
+        {
+
+
+            if (dt.Rows.Count > 0)
+            {
+                this.guest_email = dt.Rows[0]["guest_email"].ToString();
+                this.res_date = (DateTime)dt.Rows[0]["res_date"];
+                this.res_time = (TimeSpan)dt.Rows[0]["res_time"];
+                this.res_guest_cnt = (int)dt.Rows[0]["res_guest_cnt"];
+
+            }
+        }
+
+
         public Reservation(int tblId)
         {
             DataTable dt = getTblById(tblId);
@@ -32,10 +47,17 @@ namespace DotNet_Lab1.App_Code
                 this.res_spec_req = dt.Rows[0]["res_spec_req"].ToString();
             }
         }
+
+
+
+
+
         #endregion
 
 
         #region properties
+
+        public string guest_email { get; set; }
 
         public int res_id { get; set; }
         public int user_id { get; set; }
