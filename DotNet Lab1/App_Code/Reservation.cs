@@ -110,7 +110,57 @@ namespace DotNet_Lab1.App_Code
         }
 
 
+        public void saveReservation()
+        {
+            
+            //back to stored procedures :)
+            //connection object - ConfigurationManager namespace allows for runtime 
+            //access to web.config setting, specifically connection strings and key values
+            SqlConnection cn = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["SQL Server"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("res_insert", cn);
+            // Mark the Command as a Stored Procedure
+            cmd.CommandType = CommandType.StoredProcedure;
 
+            // Add Parameters to Stored Procedure
+            cmd.Parameters.Add(
+                "@res_date", SqlDbType.VarChar).Value = this.res_date;
+            cmd.Parameters.Add(
+                "@res_time", SqlDbType.Bit).Value = true;
+            cmd.Parameters.Add(
+                "@res_guest_cnt", SqlDbType.Bit).Value = this.res_guest_cnt;
+
+
+            cmd.Parameters.Add(
+               "@guest_id", SqlDbType.VarChar).Value = 12;
+            cmd.Parameters.Add(
+               "@tbl_id", SqlDbType.VarChar).Value = 1;
+            cmd.Parameters.Add(
+               "@user_id", SqlDbType.VarChar).Value = 4;
+            cmd.Parameters.Add(
+               "@res_spec_req", SqlDbType.VarChar).Value = 1;
+            
+
+            // Open the database connection and execute the command
+            try
+            {
+                cn.Open();
+                //This is not a query so just issue the command to 
+                //execute the stored procedure
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception exc)
+            {
+                //if error,notify user
+                exc.ToString();
+            }
+            finally
+            {
+                cn.Close();
+            }
+
+
+        }
 
         #endregion
     }
